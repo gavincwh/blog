@@ -39,11 +39,23 @@ pygmentsUseClasses = true
   siteKey = "6LcrGVsUAAAAAP2LKjw2P_y_FW1LVE86RZqcfjfg"
   secret = "zV5kYaBUfaIuBGGdSJIEtp8F+6VqWdBcCxUqhI69R4KvfNOw1yTQEGponVJ5uW/VDlSr6UuRmwtCga3+7UwLFnBoh+5Ssl5jlPo7/G6PkFyckd37cCaYtyfXatcIUTSou6O7mBa8DsQnjB569J9tw1VUncGJYPDZEOypGBJ3Ttc="
 
+[[menu.main]]
+  name = "Projects"
+  identifier = "projects"
+  url = "/projects/"
+  weight = 10
+
 [[menu.footer]]
   name = "Posts"
   identifier = "posts"
   url = "/posts/"
   weight = 10
+
+[[menu.footer]]
+  name = "Projects"
+  identifier = "projects"
+  url = "/projects/"
+  weight = 30
 
 [[menu.footer]]
   name = "Sitemap"

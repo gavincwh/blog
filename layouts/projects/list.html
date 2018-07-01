@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <section class="o-container">
+    {{ partial "masthead.html" . }}
+    {{- .Content -}}
+    {{ range (where .Pages "Section" "projects").Reverse }}
+      {{ partial "project.html" . }}
+    {{ end }}
+  </section>
+{{ end }}

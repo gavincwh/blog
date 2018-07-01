@@ -1,9 +1,40 @@
 {{ define "main" }}
   <section class="o-container">
     {{ partial "masthead.html" . }}
-    {{- .Content -}}
-    {{- range $.Site.Data.projects.projects -}}
-      {{ partial "project.html" . }}
-    {{- end -}}
+    <p class="c-repeat__body">
+      {{- .Params.body | markdownify -}}
+    </p>
+    <dl class="u-inline-dl">
+      {{ with .Params.role }}
+        <dt>Role:</dt>
+        <dd>{{ . }}</dd>
+      {{ end }}
+      {{ if .Params.agency }}
+        <dt>Agency:</dt>
+        {{ with .Params.agencyLink }}
+          <dd>
+            <a href="{{ . }}" rel="external nofollow">{{ $.Params.agency }}</a>
+          </dd>
+        {{ else }}
+          <dd>{{ . }}</dd>
+        {{ end }}
+      {{ end }}
+      {{ with .Params.technologies }}
+        <dt>Technologies:</dt>
+        <dd>
+          <ul class="u-comma-list">
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </dd>
+      {{ end }}
+    </dl>
+    {{ .Content }}
+    {{ with .Params.website }}
+      <p class="c-repeat__url">
+        <a href="{{ . }}" rel="external nofollow">Visit {{ $.Title }}</a>
+      </p>
+    {{ end }}
   </section>
 {{ end }}
